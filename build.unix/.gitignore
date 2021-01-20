@@ -1,0 +1,14 @@
+/*.o
+/*.lo
+/*.h
+/*.log
+/*.status
+/vi
+/nvi
+/.deps
+/.libs
+/Makefile
+/libtool
+/*.la
+/recover
+/*h1
