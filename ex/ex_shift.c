@@ -131,10 +131,11 @@ shift(SCR *sp, EXCMD *cmdp, enum which rl)
 		 * Build a new indent string and count the number of
 		 * characters it uses.
 		 */
-		for (tbp = bp, newidx = 0;
-		    newcol >= O_VAL(sp, O_TABSTOP); ++newidx) {
-			*tbp++ = '\t';
-			newcol -= O_VAL(sp, O_TABSTOP);
+		if (!O_ISSET(sp, O_EXPANDTAB)) {
+			for (; newcol >= O_VAL(sp, O_TABSTOP); ++newidx) {
+				*tbp++ = '\t';
+				newcol -= O_VAL(sp, O_TABSTOP);
+			}
 		}
 		for (; newcol > 0; --newcol, ++newidx)
 			*tbp++ = ' ';

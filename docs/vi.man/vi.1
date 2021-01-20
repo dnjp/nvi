@@ -759,6 +759,11 @@ Replay the previous input.
 Erase to the previous
 .B shiftwidth
 column boundary.
+If the
+.Cm expandtab
+option is set, only insert
+.Aq space
+characters.
 .TP
 .B "^<control-D>"
 Erase all of the autoindent characters, and reset the autoindent level.
@@ -1094,6 +1099,16 @@ command.
 .I \&Ex
 only.
 Announce error messages with a bell.
+.It Cm expandtab , et Bq off
+Expand
+.Aq tab
+characters to
+.Aq space
+when inserting, replacing or shifting text, autoindenting,
+indenting with
+.Aq Ic control-T ,
+or outdenting with
+.Aq Ic control-D .
 .TP
 .B "exrc, ex [off]"
 Read the startup files in the local directory.
